@@ -9,10 +9,10 @@
   # the build target executable:
   TARGET = listemmc
 
-  all: $(TARGET)
+  all: binaries/debug/$(TARGET)
 
-  $(TARGET): $(TARGET).c
-  	$(CC) $(CFLAGS) -o $(TARGET) $(TARGET).c
+  binaries/debug/$(TARGET): source/src/$(TARGET).c
+  	$(CC) $(CFLAGS) -o binaries/debug/$(TARGET) source/src/$(TARGET).c
 
   clean:
-  	$(RM) $(TARGET)
+  	$(RM) binaries/debug/$(TARGET)
